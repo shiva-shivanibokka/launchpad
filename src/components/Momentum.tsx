@@ -11,11 +11,11 @@ export default function Momentum({ store }: { store: Store }) {
   if (total === 0) return null
 
   return (
-    <Card className="p-6">
+    <Card className="p-5">
       <SectionTitle
         icon="📈"
         title="Momentum"
-        right={<span className="font-mono text-[16px] text-muted">{total} in last 12 wks</span>}
+        right={<span className="font-mono text-[13px] text-muted">{total} in last 12 wks</span>}
       />
       <div className="flex items-end gap-2.5" style={{ height: 120 }}>
         {weeks.map((w, i) => (

@@ -54,7 +54,7 @@ export default function App() {
       <FireflyBackground />
       <Header store={store} onAdd={openAdd} />
 
-      <main className="mx-auto max-w-[1840px] space-y-8 px-6 pb-28 md:px-16">
+      <main className="mx-auto max-w-6xl space-y-5 px-5 pb-24 pt-2">
         {store.loading ? (
           <div className="grid place-items-center py-32 font-mono text-muted">loading…</div>
         ) : (
@@ -63,11 +63,11 @@ export default function App() {
 
             <Momentum store={store} />
 
-            <section id="followups" className="scroll-mt-44">
+            <section id="followups" className="scroll-mt-28">
               <FollowUps store={store} onEdit={openEdit} />
             </section>
 
-            <section id="board" className="scroll-mt-44">
+            <section id="board" className="scroll-mt-28">
               <Card className="p-6">
                 <SectionTitle
                   icon="🗂️"
@@ -91,9 +91,9 @@ export default function App() {
                   }
                 />
                 {store.applications.length === 0 ? (
-                  <div className="rounded-xl border border-dashed border-white/12 px-4 py-16 text-center">
-                    <p className="font-display text-[24px] font-bold text-ink">No applications yet</p>
-                    <p className="mx-auto mt-3 max-w-xl font-sans text-[18px] leading-relaxed text-muted">
+                  <div className="rounded-xl border border-dashed border-white/12 px-4 py-12 text-center">
+                    <p className="font-display text-[16px] font-bold text-ink">No applications yet</p>
+                    <p className="mx-auto mt-1 max-w-xl font-sans text-[13.5px] leading-relaxed text-muted">
                       Hit <span className="text-accent-violet">＋ Add application</span> to log your first one. Drag cards
                       between columns to move them through the pipeline.
                     </p>
@@ -104,15 +104,15 @@ export default function App() {
               </Card>
             </section>
 
-            <section id="resumes" className="scroll-mt-44">
+            <section id="resumes" className="scroll-mt-28">
               <ManageResumes store={store} />
             </section>
 
-            <section id="analytics" className="scroll-mt-44">
+            <section id="analytics" className="scroll-mt-28">
               <ResumeAnalytics store={store} />
             </section>
 
-            <footer className="pt-4 text-center font-mono text-[16px] text-faint">
+            <footer className="pt-4 text-center font-mono text-[12.5px] text-faint">
               Launchpad · your data lives in this browser{store.syncState === 'off' ? ' (add a token in ⚙ to sync across devices)' : ', synced to GitHub'} · 🎯
             </footer>
           </>

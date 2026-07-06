@@ -58,7 +58,7 @@ export default function Filters({
         />
       </div>
       {(filters.q || filters.resumeId || filters.locationType) && (
-        <button onClick={() => setFilters(EMPTY_FILTERS)} className="font-mono text-[14.5px] text-faint hover:text-ink">
+        <button onClick={() => setFilters(EMPTY_FILTERS)} className="font-mono text-[13px] text-faint hover:text-ink">
           clear · {count} shown
         </button>
       )}

@@ -11,7 +11,7 @@ export default function FollowUps({ store, onEdit }: { store: Store; onEdit: (a:
   if (due.length === 0) return null
 
   return (
-    <Card className="border-accent-amber/25 p-6">
+    <Card className="border-accent-amber/25 p-5">
       <SectionTitle
         icon="⏰"
         title="Needs follow-up"
@@ -28,9 +28,9 @@ export default function FollowUps({ store, onEdit }: { store: Store; onEdit: (a:
               className="flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2 text-left transition hover:border-accent-amber/40"
             >
               <div className="min-w-0">
-                <span className="font-display text-[16px] font-bold text-ink">{a.company}</span>
-                {a.role && <span className="ml-2 font-sans text-[14px] text-muted">{a.role}</span>}
-                <div className="mt-0.5 font-mono text-[13px] text-faint">
+                <span className="font-display text-[14.5px] font-bold text-ink">{a.company}</span>
+                {a.role && <span className="ml-2 font-sans text-[12.5px] text-muted">{a.role}</span>}
+                <div className="mt-0.5 font-mono text-[12px] text-faint">
                   {a.nextAction || 'follow up'}
                   {a.followUpDate ? ` · due ${a.followUpDate}` : d !== null ? ` · quiet ${d}d` : ''}
                 </div>
