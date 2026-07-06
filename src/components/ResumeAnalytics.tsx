@@ -19,7 +19,7 @@ export default function ResumeAnalytics({ store }: { store: Store }) {
         <div className="overflow-x-auto">
           <table className="w-full min-w-[520px] border-collapse text-left">
             <thead>
-              <tr className="font-mono text-[13.5px] uppercase tracking-wide text-faint">
+              <tr className="font-mono text-[14.5px] uppercase tracking-wide text-faint">
                 <th className="pb-2 pr-3 font-medium">Resume</th>
                 <th className="pb-2 px-3 font-medium">Applied</th>
                 <th className="pb-2 px-3 font-medium">Responded</th>

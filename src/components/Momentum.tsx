@@ -20,7 +20,7 @@ export default function Momentum({ store }: { store: Store }) {
       <div className="flex items-end gap-2.5" style={{ height: 120 }}>
         {weeks.map((w, i) => (
           <div key={i} className="flex flex-1 flex-col items-center justify-end gap-1.5" title={`Week of ${w.label}: ${w.count}`}>
-            <span className="font-mono text-[12px] text-faint">{w.count || ''}</span>
+            <span className="font-mono text-[13.5px] text-faint">{w.count || ''}</span>
             <div
               className="w-full rounded-t-md transition-[height] duration-500"
               style={{
@@ -30,7 +30,7 @@ export default function Momentum({ store }: { store: Store }) {
                   : 'rgba(255,255,255,0.06)',
               }}
             />
-            <span className="font-mono text-[11.5px] text-faint">{w.label}</span>
+            <span className="font-mono text-[13px] text-faint">{w.label}</span>
           </div>
         ))}
       </div>

@@ -73,7 +73,7 @@ export default function AppCard({
           ))}
         {app.locationType && <Pill color="#5eead4">{app.locationType}</Pill>}
         {d !== null && app.status !== 'wishlist' && (
-          <span className="font-mono text-[14px] text-faint">{d === 0 ? 'today' : `${d}d ago`}</span>
+          <span className="font-mono text-[15px] text-faint">{d === 0 ? 'today' : `${d}d ago`}</span>
         )}
       </div>
 
@@ -84,12 +84,12 @@ export default function AppCard({
       )}
 
       {overdue && (
-        <div className="mt-2 flex items-center gap-1.5 rounded-md border border-accent-amber/40 bg-accent-amber/10 px-2.5 py-1 font-mono text-[14px] text-accent-amber">
+        <div className="mt-2 flex items-center gap-1.5 rounded-md border border-accent-amber/40 bg-accent-amber/10 px-2.5 py-1 font-mono text-[15px] text-accent-amber">
           ⚠ follow up{app.nextAction ? `: ${app.nextAction}` : ''}
         </div>
       )}
       {stale && (
-        <div className="mt-2 flex items-center gap-1.5 rounded-md border border-accent-blue/30 bg-accent-blue/10 px-2.5 py-1 font-mono text-[14px] text-accent-blue">
+        <div className="mt-2 flex items-center gap-1.5 rounded-md border border-accent-blue/30 bg-accent-blue/10 px-2.5 py-1 font-mono text-[15px] text-accent-blue">
           ○ stale · quiet {staleDays}d
         </div>
       )}

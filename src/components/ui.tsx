@@ -37,7 +37,7 @@ export function ProgressBar({ value, total, color = '#a78bfa' }: { value: number
 export function Pill({ children, color = '#a78bfa' }: { children: ReactNode; color?: string }) {
   return (
     <span
-      className="inline-flex items-center gap-1 rounded-full border px-2.5 py-1 font-mono text-[15px] font-bold"
+      className="inline-flex items-center gap-1 rounded-full border px-2.5 py-1 font-mono text-[15.5px] font-bold"
       style={{ color, borderColor: `${color}55`, background: `${color}14` }}
     >
       {children}
@@ -53,7 +53,7 @@ export function Dot({ color }: { color: string }) {
 export function Field({ label, children }: { label: string; children: ReactNode }) {
   return (
     <label className="block">
-      <span className="mb-1 block font-mono text-[14px] uppercase tracking-wide text-muted">{label}</span>
+      <span className="mb-1 block font-mono text-[15px] uppercase tracking-wide text-muted">{label}</span>
       {children}
     </label>
   )

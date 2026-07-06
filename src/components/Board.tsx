@@ -61,7 +61,7 @@ export default function Board({
               }`}
             >
               <Dot color={col.color} />
-              <span className="rounded-full bg-white/5 px-2 py-0.5 font-mono text-[14px]" style={{ color: col.color }}>
+              <span className="rounded-full bg-white/5 px-2 py-0.5 font-mono text-[15px]" style={{ color: col.color }}>
                 {items.length}
               </span>
               <span
@@ -88,7 +88,7 @@ export default function Board({
                 {col.label}
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="rounded-full bg-white/5 px-2 py-0.5 font-mono text-[14px] text-faint">{items.length}</span>
+                <span className="rounded-full bg-white/5 px-2 py-0.5 font-mono text-[15px] text-faint">{items.length}</span>
                 <button
                   onClick={() => toggle(col.id)}
                   title={`Collapse ${col.label}`}
@@ -103,7 +103,7 @@ export default function Board({
                 <AppCard key={a.id} app={a} store={store} onEdit={onEdit} />
               ))}
               {items.length === 0 && (
-                <div className="rounded-xl border border-dashed border-white/10 px-2 py-5 text-center font-mono text-[14px] text-faint">
+                <div className="rounded-xl border border-dashed border-white/10 px-2 py-5 text-center font-mono text-[15px] text-faint">
                   drop here
                 </div>
               )}

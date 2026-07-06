@@ -25,11 +25,11 @@ export default function ManageResumes({ store }: { store: Store }) {
 
       <div className="mb-4 flex flex-wrap items-end gap-2">
         <div className="min-w-[180px] flex-1">
-          <span className="mb-1 block font-mono text-[14px] uppercase tracking-wide text-muted">Resume name</span>
+          <span className="mb-1 block font-mono text-[15px] uppercase tracking-wide text-muted">Resume name</span>
           <TextInput value={name} onChange={(e) => setName(e.target.value)} placeholder="AI Engineer — v3" onKeyDown={(e) => e.key === 'Enter' && add()} />
         </div>
         <div className="min-w-[180px] flex-1">
-          <span className="mb-1 block font-mono text-[14px] uppercase tracking-wide text-muted">Link (optional)</span>
+          <span className="mb-1 block font-mono text-[15px] uppercase tracking-wide text-muted">Link (optional)</span>
           <TextInput value={url} onChange={(e) => setUrl(e.target.value)} placeholder="https://drive.google.com/…" onKeyDown={(e) => e.key === 'Enter' && add()} />
         </div>
         <Button variant="primary" onClick={add} disabled={!name.trim()}>
@@ -57,13 +57,13 @@ export default function ManageResumes({ store }: { store: Store }) {
               className="min-w-0 flex-1 bg-transparent font-mono text-[15px] text-muted outline-none"
             />
             {r.url && (
-              <a href={r.url} target="_blank" rel="noreferrer" className="rounded-md border border-white/10 px-2 py-0.5 font-mono text-[14px] text-accent-mint hover:bg-white/5">
+              <a href={r.url} target="_blank" rel="noreferrer" className="rounded-md border border-white/10 px-2 py-0.5 font-mono text-[15px] text-accent-mint hover:bg-white/5">
                 open ↗
               </a>
             )}
             <button
               onClick={() => store.deleteResume(r.id)}
-              className="rounded-md border border-white/10 px-2 py-0.5 font-mono text-[14px] text-faint hover:border-accent-rose/40 hover:text-accent-rose"
+              className="rounded-md border border-white/10 px-2 py-0.5 font-mono text-[15px] text-faint hover:border-accent-rose/40 hover:text-accent-rose"
               title="Remove (unlinks it from applications)"
             >
               ✕

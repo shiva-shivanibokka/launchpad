@@ -30,7 +30,7 @@ export default function FollowUps({ store, onEdit }: { store: Store; onEdit: (a:
               <div className="min-w-0">
                 <span className="font-display text-[17px] font-bold text-ink">{a.company}</span>
                 {a.role && <span className="ml-2 font-sans text-[15px] text-muted">{a.role}</span>}
-                <div className="mt-0.5 font-mono text-[14px] text-faint">
+                <div className="mt-0.5 font-mono text-[15px] text-faint">
                   {a.nextAction || 'follow up'}
                   {a.followUpDate ? ` · due ${a.followUpDate}` : d !== null ? ` · quiet ${d}d` : ''}
                 </div>
