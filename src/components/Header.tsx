@@ -12,7 +12,7 @@ export default function Header({ store, onAdd }: { store: Store; onAdd: () => vo
   return (
     <header className="sticky top-0 z-20">
       <div className="bg-gradient-to-b from-canvas/95 via-canvas/80 to-canvas/25 backdrop-blur-md">
-        <div className="mx-auto flex max-w-[1840px] items-center gap-4 px-10 pt-5 pb-3">
+        <div className="mx-auto flex max-w-[1840px] items-center gap-4 px-6 md:px-16 pt-5 pb-3">
           <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl border border-accent-violet/30 bg-accent-violet/10 text-[30px] shadow-glow">
             🎯
           </div>
@@ -27,7 +27,7 @@ export default function Header({ store, onAdd }: { store: Store; onAdd: () => vo
           </div>
         </div>
 
-        <div className="mx-auto flex max-w-[1840px] flex-wrap items-center gap-3 px-10 pb-5">
+        <div className="mx-auto flex max-w-[1840px] flex-wrap items-center gap-3 px-6 md:px-16 pb-5">
           <nav className="flex gap-3 overflow-x-auto">
             {[
               ['board', 'Board'],

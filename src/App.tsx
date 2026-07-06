@@ -54,7 +54,7 @@ export default function App() {
       <FireflyBackground />
       <Header store={store} onAdd={openAdd} />
 
-      <main className="mx-auto max-w-[1840px] space-y-8 px-10 pb-28">
+      <main className="mx-auto max-w-[1840px] space-y-8 px-6 pb-28 md:px-16">
         {store.loading ? (
           <div className="grid place-items-center py-32 font-mono text-muted">loading…</div>
         ) : (
@@ -63,9 +63,11 @@ export default function App() {
 
             <Momentum store={store} />
 
-            <FollowUps store={store} onEdit={openEdit} />
+            <section id="followups" className="scroll-mt-44">
+              <FollowUps store={store} onEdit={openEdit} />
+            </section>
 
-            <section id="board" className="scroll-mt-28">
+            <section id="board" className="scroll-mt-44">
               <Card className="p-6">
                 <SectionTitle
                   icon="🗂️"
@@ -102,13 +104,11 @@ export default function App() {
               </Card>
             </section>
 
-            <section id="followups" className="scroll-mt-28" />
-
-            <section id="resumes" className="scroll-mt-28">
+            <section id="resumes" className="scroll-mt-44">
               <ManageResumes store={store} />
             </section>
 
-            <section id="analytics" className="scroll-mt-28">
+            <section id="analytics" className="scroll-mt-44">
               <ResumeAnalytics store={store} />
             </section>
 
