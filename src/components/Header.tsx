@@ -16,7 +16,7 @@ export default function Header({ store, onAdd }: { store: Store; onAdd: () => vo
             <h1 className="bg-gradient-to-r from-accent-violet via-accent-mint to-accent-emerald bg-clip-text font-display text-[34px] font-extrabold leading-none tracking-tight text-transparent sm:text-[48px]">
               LAUNCHPAD
             </h1>
-            <p className="mt-1 font-mono text-[16px] text-muted">Job application tracker</p>
+            <p className="mt-1 font-mono text-[17.5px] text-muted">Job application tracker</p>
           </div>
           <div className="ml-auto hidden lg:block">
             <SyncSettings store={store} />
@@ -34,7 +34,7 @@ export default function Header({ store, onAdd }: { store: Store; onAdd: () => vo
               <a
                 key={id}
                 href={`#${id}`}
-                className="whitespace-nowrap rounded-full border border-white/10 bg-canvas/50 px-4 py-2 font-mono text-[14.5px] font-bold text-muted backdrop-blur-sm transition hover:border-accent-violet/40 hover:bg-accent-violet/20 hover:text-ink"
+                className="whitespace-nowrap rounded-full border border-white/10 bg-canvas/50 px-4 py-2 font-mono text-[16px] font-bold text-muted backdrop-blur-sm transition hover:border-accent-violet/40 hover:bg-accent-violet/20 hover:text-ink"
               >
                 {label}
               </a>

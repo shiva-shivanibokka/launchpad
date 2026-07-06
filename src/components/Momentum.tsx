@@ -15,12 +15,12 @@ export default function Momentum({ store }: { store: Store }) {
       <SectionTitle
         icon="📈"
         title="Momentum"
-        right={<span className="font-mono text-[15.5px] text-muted">{total} in last 12 wks</span>}
+        right={<span className="font-mono text-[17px] text-muted">{total} in last 12 wks</span>}
       />
       <div className="flex items-end gap-2.5" style={{ height: 120 }}>
         {weeks.map((w, i) => (
           <div key={i} className="flex flex-1 flex-col items-center justify-end gap-1.5" title={`Week of ${w.label}: ${w.count}`}>
-            <span className="font-mono text-[13.5px] text-faint">{w.count || ''}</span>
+            <span className="font-mono text-[15px] text-faint">{w.count || ''}</span>
             <div
               className="w-full rounded-t-md transition-[height] duration-500"
               style={{
@@ -30,7 +30,7 @@ export default function Momentum({ store }: { store: Store }) {
                   : 'rgba(255,255,255,0.06)',
               }}
             />
-            <span className="font-mono text-[13px] text-faint">{w.label}</span>
+            <span className="font-mono text-[14.5px] text-faint">{w.label}</span>
           </div>
         ))}
       </div>

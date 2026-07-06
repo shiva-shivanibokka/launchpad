@@ -28,9 +28,9 @@ export default function FollowUps({ store, onEdit }: { store: Store; onEdit: (a:
               className="flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2 text-left transition hover:border-accent-amber/40"
             >
               <div className="min-w-0">
-                <span className="font-display text-[17px] font-bold text-ink">{a.company}</span>
-                {a.role && <span className="ml-2 font-sans text-[15px] text-muted">{a.role}</span>}
-                <div className="mt-0.5 font-mono text-[15px] text-faint">
+                <span className="font-display text-[18.5px] font-bold text-ink">{a.company}</span>
+                {a.role && <span className="ml-2 font-sans text-[16.5px] text-muted">{a.role}</span>}
+                <div className="mt-0.5 font-mono text-[16.5px] text-faint">
                   {a.nextAction || 'follow up'}
                   {a.followUpDate ? ` · due ${a.followUpDate}` : d !== null ? ` · quiet ${d}d` : ''}
                 </div>

@@ -92,8 +92,8 @@ export default function App() {
                 />
                 {store.applications.length === 0 ? (
                   <div className="rounded-xl border border-dashed border-white/12 px-4 py-12 text-center">
-                    <p className="font-display text-[18px] font-bold text-ink">No applications yet</p>
-                    <p className="mx-auto mt-1.5 max-w-xl font-sans text-[17px] leading-relaxed text-muted">
+                    <p className="font-display text-[20px] font-bold text-ink">No applications yet</p>
+                    <p className="mx-auto mt-1.5 max-w-xl font-sans text-[18.5px] leading-relaxed text-muted">
                       Hit <span className="text-accent-violet">＋ Add application</span> to log your first one. Drag cards
                       between columns to move them through the pipeline.
                     </p>
@@ -112,7 +112,7 @@ export default function App() {
               <ResumeAnalytics store={store} />
             </section>
 
-            <footer className="pt-4 text-center font-mono text-[17px] text-faint">
+            <footer className="pt-4 text-center font-mono text-[18.5px] text-faint">
               Launchpad · your data lives in this browser{store.syncState === 'off' ? ' (add a token in ⚙ to sync across devices)' : ', synced to GitHub'} · 🎯
             </footer>
           </>
