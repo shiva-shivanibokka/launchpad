@@ -12,15 +12,15 @@ export default function Header({ store, onAdd }: { store: Store; onAdd: () => vo
   return (
     <header className="sticky top-0 z-20">
       <div className="bg-gradient-to-b from-canvas/95 via-canvas/80 to-canvas/25 backdrop-blur-md">
-        <div className="mx-auto flex max-w-[1840px] items-center gap-6 px-10 pt-7 pb-4">
-          <div className="grid h-24 w-24 shrink-0 place-items-center rounded-3xl border border-accent-violet/30 bg-accent-violet/10 text-[52px] shadow-glow">
+        <div className="mx-auto flex max-w-[1840px] items-center gap-4 px-10 pt-5 pb-3">
+          <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl border border-accent-violet/30 bg-accent-violet/10 text-[30px] shadow-glow">
             🎯
           </div>
           <div className="min-w-0">
-            <h1 className="bg-gradient-to-r from-accent-violet via-accent-mint to-accent-emerald bg-clip-text font-display text-[48px] font-extrabold leading-[0.95] tracking-tight text-transparent sm:text-[76px]">
+            <h1 className="bg-gradient-to-r from-accent-violet via-accent-mint to-accent-emerald bg-clip-text font-display text-[30px] font-extrabold leading-[0.95] tracking-tight text-transparent sm:text-[44px]">
               LAUNCHPAD
             </h1>
-            <p className="mt-2 font-mono text-[18px] text-muted">Job-application tracker · synced {synced}</p>
+            <p className="mt-1.5 font-mono text-[15px] text-muted">Job-application tracker · synced {synced}</p>
           </div>
           <div className="ml-auto hidden lg:block">
             <SyncSettings store={store} />
