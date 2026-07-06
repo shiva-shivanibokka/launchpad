@@ -2,7 +2,8 @@ import { useState } from 'react'
 import type { Application, LocationType, StatusId } from '../data/types'
 import { STATUSES } from '../data/statuses'
 import type { Store } from '../lib/store'
-import { Button, Field, Select, TextArea, TextInput } from './ui'
+import { Button, Field, TextArea, TextInput } from './ui'
+import FancySelect from './FancySelect'
 
 // Modal to add a new application or edit an existing one. `editing` is the
 // application being edited, or null when adding.
@@ -80,34 +81,41 @@ export default function AppForm({
             </Field>
           </div>
           <Field label="Resume used">
-            <Select value={resumeId} onChange={(e) => setResumeId(e.target.value)}>
-              <option value="">— none —</option>
-              {store.resumes.map((r) => (
-                <option key={r.id} value={r.id}>
-                  {r.name}
-                </option>
-              ))}
-            </Select>
+            <FancySelect
+              ariaLabel="Resume used"
+              value={resumeId || undefined}
+              onChange={(v) => setResumeId(v || '')}
+              placeholder="— none —"
+              includeClear
+              clearLabel="None"
+              options={store.resumes.map((r) => ({ value: r.id, label: r.name, color: '#a78bfa' }))}
+            />
           </Field>
           <Field label="Status">
-            <Select value={status} onChange={(e) => setStatus(e.target.value as StatusId)}>
-              {STATUSES.map((s) => (
-                <option key={s.id} value={s.id}>
-                  {s.label}
-                </option>
-              ))}
-            </Select>
+            <FancySelect
+              ariaLabel="Status"
+              value={status}
+              onChange={(v) => v && setStatus(v as StatusId)}
+              options={STATUSES.map((s) => ({ value: s.id, label: s.label, color: s.color }))}
+            />
           </Field>
           <Field label="Date applied">
             <TextInput type="date" value={dateApplied} onChange={(e) => setDateApplied(e.target.value)} />
           </Field>
           <Field label="Location type">
-            <Select value={locationType} onChange={(e) => setLocationType(e.target.value as LocationType)}>
-              <option value="">—</option>
-              <option value="Remote">Remote</option>
-              <option value="Hybrid">Hybrid</option>
-              <option value="Onsite">Onsite</option>
-            </Select>
+            <FancySelect
+              ariaLabel="Location type"
+              value={locationType || undefined}
+              onChange={(v) => setLocationType((v || '') as LocationType)}
+              placeholder="—"
+              includeClear
+              clearLabel="—"
+              options={[
+                { value: 'Remote', label: 'Remote', color: '#5eead4' },
+                { value: 'Hybrid', label: 'Hybrid', color: '#5eead4' },
+                { value: 'Onsite', label: 'Onsite', color: '#5eead4' },
+              ]}
+            />
           </Field>
           <div className="col-span-2">
             <Field label="Location">

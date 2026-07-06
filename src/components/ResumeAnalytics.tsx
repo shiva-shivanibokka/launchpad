@@ -12,7 +12,7 @@ export default function ResumeAnalytics({ store }: { store: Store }) {
     <Card className="p-6">
       <SectionTitle icon="📊" title="Resume analytics" />
       {!hasData ? (
-        <p className="font-sans text-[15px] leading-relaxed text-muted">
+        <p className="font-sans text-[18px] leading-relaxed text-muted">
           Once you log applications and tag which resume you used, this shows which version pulls the best response rate.
         </p>
       ) : (

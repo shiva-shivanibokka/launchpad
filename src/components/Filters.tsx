@@ -1,5 +1,6 @@
 import type { Resume } from '../data/types'
-import { Select, TextInput } from './ui'
+import { TextInput } from './ui'
+import FancySelect from './FancySelect'
 
 export interface FilterState {
   q: string
@@ -9,7 +10,7 @@ export interface FilterState {
 
 export const EMPTY_FILTERS: FilterState = { q: '', resumeId: '', locationType: '' }
 
-// Board filters: free-text search over company/role, plus resume and location-type
+// Board filters: free-text search over company/role, plus résumé and location-type
 // dropdowns. Purely presentational — App owns the state and does the filtering.
 export default function Filters({
   filters,
@@ -28,24 +29,36 @@ export default function Filters({
         value={filters.q}
         onChange={(e) => setFilters({ ...filters, q: e.target.value })}
         placeholder="Search company or role…"
-        className="w-[220px]"
+        className="!w-[220px]"
       />
-      <Select value={filters.resumeId} onChange={(e) => setFilters({ ...filters, resumeId: e.target.value })} className="w-[190px]">
-        <option value="">All resumes</option>
-        {resumes.map((r) => (
-          <option key={r.id} value={r.id}>
-            {r.name}
-          </option>
-        ))}
-      </Select>
-      <Select value={filters.locationType} onChange={(e) => setFilters({ ...filters, locationType: e.target.value })} className="w-[150px]">
-        <option value="">All locations</option>
-        <option value="Remote">Remote</option>
-        <option value="Hybrid">Hybrid</option>
-        <option value="Onsite">Onsite</option>
-      </Select>
+      <div className="w-[190px]">
+        <FancySelect
+          ariaLabel="Filter by résumé"
+          value={filters.resumeId || undefined}
+          onChange={(v) => setFilters({ ...filters, resumeId: v || '' })}
+          placeholder="All résumés"
+          includeClear
+          clearLabel="All résumés"
+          options={resumes.map((r) => ({ value: r.id, label: r.name, color: '#a78bfa' }))}
+        />
+      </div>
+      <div className="w-[160px]">
+        <FancySelect
+          ariaLabel="Filter by location"
+          value={filters.locationType || undefined}
+          onChange={(v) => setFilters({ ...filters, locationType: v || '' })}
+          placeholder="All locations"
+          includeClear
+          clearLabel="All locations"
+          options={[
+            { value: 'Remote', label: 'Remote', color: '#5eead4' },
+            { value: 'Hybrid', label: 'Hybrid', color: '#5eead4' },
+            { value: 'Onsite', label: 'Onsite', color: '#5eead4' },
+          ]}
+        />
+      </div>
       {(filters.q || filters.resumeId || filters.locationType) && (
-        <button onClick={() => setFilters(EMPTY_FILTERS)} className="font-mono text-[12.5px] text-faint hover:text-ink">
+        <button onClick={() => setFilters(EMPTY_FILTERS)} className="font-mono text-[14.5px] text-faint hover:text-ink">
           clear · {count} shown
         </button>
       )}

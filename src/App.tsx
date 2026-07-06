@@ -9,7 +9,8 @@ import FollowUps from './components/FollowUps'
 import ManageResumes from './components/ManageResumes'
 import ResumeAnalytics from './components/ResumeAnalytics'
 import AppForm from './components/AppForm'
-import { Card, SectionTitle, Select } from './components/ui'
+import FancySelect from './components/FancySelect'
+import { Card, SectionTitle } from './components/ui'
 import { computeTotals } from './lib/analytics'
 import { useStore } from './lib/store'
 import type { Application } from './data/types'
@@ -72,18 +73,25 @@ export default function App() {
                   right={
                     <div className="flex flex-wrap items-center gap-2">
                       <Filters filters={filters} setFilters={setFilters} resumes={store.resumes} count={filtered.length} />
-                      <Select value={sortBy} onChange={(e) => setSortBy(e.target.value as typeof sortBy)} className="!w-[168px]">
-                        <option value="recent">Sort: newest applied</option>
-                        <option value="oldest">Sort: oldest applied</option>
-                        <option value="followup">Sort: follow-up due</option>
-                      </Select>
+                      <div className="w-[190px]">
+                        <FancySelect
+                          ariaLabel="Sort applications"
+                          value={sortBy}
+                          onChange={(v) => v && setSortBy(v as typeof sortBy)}
+                          options={[
+                            { value: 'recent', label: 'Newest applied' },
+                            { value: 'oldest', label: 'Oldest applied' },
+                            { value: 'followup', label: 'Follow-up due' },
+                          ]}
+                        />
+                      </div>
                     </div>
                   }
                 />
                 {store.applications.length === 0 ? (
                   <div className="rounded-xl border border-dashed border-white/12 px-4 py-16 text-center">
-                    <p className="font-display text-[20px] font-bold text-ink">No applications yet</p>
-                    <p className="mt-2 font-sans text-[15px] text-muted">
+                    <p className="font-display text-[24px] font-bold text-ink">No applications yet</p>
+                    <p className="mx-auto mt-3 max-w-xl font-sans text-[18px] leading-relaxed text-muted">
                       Hit <span className="text-accent-violet">＋ Add application</span> to log your first one. Drag cards
                       between columns to move them through the pipeline.
                     </p>
@@ -104,8 +112,8 @@ export default function App() {
               <ResumeAnalytics store={store} />
             </section>
 
-            <footer className="pt-4 text-center font-mono text-[13.5px] text-faint">
-              Launchpad · your data lives in this browser{store.syncState === 'off' ? ' (add a token in ⚙ to sync across devices)' : ', synced to GitHub'} · 🚀
+            <footer className="pt-4 text-center font-mono text-[16px] text-faint">
+              Launchpad · your data lives in this browser{store.syncState === 'off' ? ' (add a token in ⚙ to sync across devices)' : ', synced to GitHub'} · 🎯
             </footer>
           </>
         )}
