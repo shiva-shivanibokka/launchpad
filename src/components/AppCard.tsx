@@ -54,10 +54,10 @@ export default function AppCard({
     >
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0">
-          <div className="truncate font-display text-[16px] font-bold leading-tight text-ink">{app.company}</div>
-          {app.role && <div className="mt-0.5 truncate font-sans text-[14px] text-muted">{app.role}</div>}
+          <div className="truncate font-display text-[17.5px] font-bold leading-tight text-ink">{app.company}</div>
+          {app.role && <div className="mt-0.5 truncate font-sans text-[15px] text-muted">{app.role}</div>}
         </div>
-        <span className="shrink-0 rounded-md border border-white/10 px-1.5 py-0.5 font-mono text-[14px] text-faint opacity-60 transition group-hover:opacity-100" title="Edit">
+        <span className="shrink-0 rounded-md border border-white/10 px-1.5 py-0.5 font-mono text-[15px] text-faint opacity-60 transition group-hover:opacity-100" title="Edit">
           ✎
         </span>
       </div>
@@ -73,23 +73,23 @@ export default function AppCard({
           ))}
         {app.locationType && <Pill color="#5eead4">{app.locationType}</Pill>}
         {d !== null && app.status !== 'wishlist' && (
-          <span className="font-mono text-[13px] text-faint">{d === 0 ? 'today' : `${d}d ago`}</span>
+          <span className="font-mono text-[14px] text-faint">{d === 0 ? 'today' : `${d}d ago`}</span>
         )}
       </div>
 
       {notePreview && (
-        <div className="mt-2 truncate font-sans text-[14px] italic text-faint" title={app.notes}>
+        <div className="mt-2 truncate font-sans text-[15px] italic text-faint" title={app.notes}>
           “{notePreview}”
         </div>
       )}
 
       {overdue && (
-        <div className="mt-2 flex items-center gap-1.5 rounded-md border border-accent-amber/40 bg-accent-amber/10 px-2.5 py-1 font-mono text-[13px] text-accent-amber">
+        <div className="mt-2 flex items-center gap-1.5 rounded-md border border-accent-amber/40 bg-accent-amber/10 px-2.5 py-1 font-mono text-[14px] text-accent-amber">
           ⚠ follow up{app.nextAction ? `: ${app.nextAction}` : ''}
         </div>
       )}
       {stale && (
-        <div className="mt-2 flex items-center gap-1.5 rounded-md border border-accent-blue/30 bg-accent-blue/10 px-2.5 py-1 font-mono text-[13px] text-accent-blue">
+        <div className="mt-2 flex items-center gap-1.5 rounded-md border border-accent-blue/30 bg-accent-blue/10 px-2.5 py-1 font-mono text-[14px] text-accent-blue">
           ○ stale · quiet {staleDays}d
         </div>
       )}
@@ -101,7 +101,7 @@ export default function AppCard({
             onClick={(e) => move(e, idx - 1)}
             disabled={!canBack}
             title="Move back a stage"
-            className="rounded-md border border-white/12 px-2.5 py-0.5 font-mono text-[14px] text-muted transition hover:text-ink disabled:opacity-30"
+            className="rounded-md border border-white/12 px-2.5 py-0.5 font-mono text-[15px] text-muted transition hover:text-ink disabled:opacity-30"
           >
             ◀
           </button>
@@ -109,7 +109,7 @@ export default function AppCard({
             onClick={(e) => move(e, idx + 1)}
             disabled={!canFwd}
             title="Move forward a stage"
-            className="rounded-md border border-white/12 px-2.5 py-0.5 font-mono text-[14px] text-muted transition hover:text-ink disabled:opacity-30"
+            className="rounded-md border border-white/12 px-2.5 py-0.5 font-mono text-[15px] text-muted transition hover:text-ink disabled:opacity-30"
           >
             ▶
           </button>

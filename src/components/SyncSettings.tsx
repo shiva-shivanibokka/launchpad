@@ -45,7 +45,7 @@ export default function SyncSettings({ store }: { store: Store }) {
         </Button>
         {open && (
           <div className="absolute right-0 top-full z-30 mt-2 w-[320px] rounded-xl border border-white/10 bg-card/95 p-3 text-left backdrop-blur-md">
-            <p className="mb-2 text-[13px] leading-relaxed text-muted">
+            <p className="mb-2 text-[15px] leading-relaxed text-muted">
               Optional. A fine-grained PAT (Contents: read/write on <span className="text-subtle">launchpad</span>) saves
               your applications across devices. Stored only in this browser, never committed.
             </p>
@@ -54,7 +54,7 @@ export default function SyncSettings({ store }: { store: Store }) {
               value={val}
               onChange={(e) => setVal(e.target.value)}
               placeholder="github_pat_…"
-              className="w-full rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1.5 font-mono text-[13.5px] text-ink outline-none focus:border-accent-teal/60"
+              className="w-full rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-2 font-mono text-[15px] text-ink outline-none focus:border-accent-teal/60"
             />
             <div className="mt-2 flex items-center gap-2">
               <Button variant="primary" onClick={save}>
