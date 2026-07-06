@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  /* Deep, dark base — the animated mesh sits on top of this and never brightens. */
+  background: #05060d;
+  color: #ecebff;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Dark purple + emerald gradient field. Colors are deliberately deep so even as
+   the blobs drift the whole field stays dark. Fireflies (canvas) sit above it. */
+.bg-mesh {
+  position: fixed;
+  inset: 0;
+  z-index: -20;
+  background:
+    radial-gradient(60% 60% at 20% 26%, rgba(76, 29, 149, 0.55), transparent 62%),
+    radial-gradient(55% 55% at 82% 24%, rgba(6, 78, 59, 0.5), transparent 62%),
+    radial-gradient(60% 60% at 74% 82%, rgba(49, 10, 101, 0.5), transparent 62%),
+    radial-gradient(52% 52% at 22% 84%, rgba(15, 118, 110, 0.42), transparent 62%),
+    #05060d;
+  background-size: 180% 180%;
+  filter: blur(30px) saturate(1.05);
+  animation: meshmove 28s ease-in-out infinite alternate;
+}
+@keyframes meshmove {
+  0% {
+    background-position: 0% 0%, 100% 0%, 100% 100%, 0% 100%;
+  }
+  50% {
+    background-position: 35% 55%, 65% 35%, 35% 55%, 65% 45%;
+  }
+  100% {
+    background-position: 100% 100%, 0% 100%, 0% 0%, 100% 0%;
+  }
+}
+
+/* Native dropdowns: force the option popup dark (the OS default is a white
+   list, which was invisible against light text). color-scheme + explicit
+   option colors covers Chrome/Edge/Firefox on Windows. */
+select {
+  color-scheme: dark;
+}
+select option,
+select optgroup {
+  background-color: #0d1122;
+  color: #ecebff;
+}
+/* Date inputs: dark calendar/spinner + a lighter picker icon. */
+input[type='date'] {
+  color-scheme: dark;
+}
+
+/* Thin scrollbar */
+*::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: #2a2740;
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #3a3660;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-mesh {
+    animation: none;
+  }
+}

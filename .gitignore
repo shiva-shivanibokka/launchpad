@@ -1,0 +1,11 @@
+node_modules
+dist
+dist-ssr
+# stray output emitted by tsc -b for the composite node config
+vite.config.js
+vite.config.d.ts
+*.tsbuildinfo
+*.local
+.DS_Store
+.vscode/*
+!.vscode/extensions.json

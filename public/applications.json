@@ -1,0 +1,12 @@
+{
+  "generatedAt": null,
+  "resumes": [
+    { "id": "r-agentic", "name": "Bokka_Shivani_Agentic" },
+    { "id": "r-ai", "name": "Bokka_Shivani_AI" },
+    { "id": "r-common", "name": "Bokka_Shivani_Common" },
+    { "id": "r-ds", "name": "Bokka_Shivani_DS" },
+    { "id": "r-ml", "name": "Bokka_Shivani_ML" },
+    { "id": "r-swe", "name": "Bokka_Shivani_SWE" }
+  ],
+  "applications": []
+}
