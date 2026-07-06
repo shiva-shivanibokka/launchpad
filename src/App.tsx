@@ -112,7 +112,7 @@ export default function App() {
               <ResumeAnalytics store={store} />
             </section>
 
-            <footer className="pt-4 text-center font-mono text-[15px] text-faint">
+            <footer className="pt-4 text-center font-mono text-[17px] text-faint">
               Launchpad · your data lives in this browser{store.syncState === 'off' ? ' (add a token in ⚙ to sync across devices)' : ', synced to GitHub'} · 🎯
             </footer>
           </>

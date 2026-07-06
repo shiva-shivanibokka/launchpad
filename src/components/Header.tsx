@@ -5,10 +5,6 @@ import { Button } from './ui'
 // Sticky header: big Unbounded wordmark, a one-line synced status, the jump-nav
 // pills, the "Add application" button and the sync/settings actions.
 export default function Header({ store, onAdd }: { store: Store; onAdd: () => void }) {
-  const synced = store.lastSyncedAt
-    ? new Date(store.lastSyncedAt).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })
-    : 'not yet'
-
   return (
     <header className="sticky top-0 z-20">
       <div className="bg-gradient-to-b from-canvas/95 via-canvas/80 to-canvas/25 backdrop-blur-md">
@@ -20,7 +16,7 @@ export default function Header({ store, onAdd }: { store: Store; onAdd: () => vo
             <h1 className="bg-gradient-to-r from-accent-violet via-accent-mint to-accent-emerald bg-clip-text font-display text-[34px] font-extrabold leading-none tracking-tight text-transparent sm:text-[48px]">
               LAUNCHPAD
             </h1>
-            <p className="mt-1 font-mono text-[15px] text-muted">Job-application tracker · synced {synced}</p>
+            <p className="mt-1 font-mono text-[16px] text-muted">Job application tracker</p>
           </div>
           <div className="ml-auto hidden lg:block">
             <SyncSettings store={store} />
