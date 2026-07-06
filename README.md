@@ -125,16 +125,17 @@ launchpad/
 ├─ src/
 │  ├─ data/                    # types.ts, statuses.ts (the pipeline definition)
 │  ├─ lib/                     # store.ts (persistence + reconciliation), github.ts (Contents API), analytics.ts (pure derivations)
-│  ├─ components/              # Board, AppCard, AppForm, StatTiles, Momentum, ResumeAnalytics, FollowUps, ManageResumes, Header, FireflyBackground, ui
+│  ├─ components/              # Board, AppCard, AppForm, StatTiles, Momentum, ResumeAnalytics, FollowUps, ManageResumes, Header, FancySelect, usePopover, FireflyBackground, ui
 │  ├─ hooks/                   # usePrefersReducedMotion
 │  ├─ App.tsx                  # composition + filter/sort state
 │  └─ index.css                # dark theme + animated gradient
 ├─ .github/workflows/deploy.yml # build + deploy to GitHub Pages
+├─ AUDIT.md / PLAN.md          # whole-repo bug audit + follow-up plan
 └─ vite.config.ts              # base: '/launchpad/'
 ```
 
 ## Testing
-No automated test suite yet. The data engine in `src/lib/` (reconciliation logic in `store.ts`, the pure functions in `analytics.ts`) is the part most worth covering, and is written to be unit-testable (pure functions, no DOM) — adding tests there is the top item on the roadmap below. Type-checking runs on every build (`tsc -b`) and in CI.
+No automated test suite yet. The data engine in `src/lib/` (reconciliation logic in `store.ts`, the pure functions in `analytics.ts`) is the part most worth covering, and is written to be unit-testable (pure functions, no DOM) — the concrete test plan is in [`PLAN.md`](./PLAN.md) and it's the top roadmap item below. Type-checking runs on every build (`tsc -b`, with `noUnusedLocals`/strict) and in CI. A whole-repo bug audit ([`AUDIT.md`](./AUDIT.md)) was run and came back clean apart from three trivial dead-code removals.
 
 ## Deployment
 Deployed via **GitHub Actions → GitHub Pages** (`.github/workflows/deploy.yml`): every push to `main` type-checks, builds, and publishes `dist/` to Pages at `/launchpad/`. The workflow uses `concurrency` to avoid overlapping deploys and retries `deploy-pages` up to 3× to ride out transient Pages backend errors.

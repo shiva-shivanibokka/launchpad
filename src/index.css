@@ -47,17 +47,6 @@ body {
   }
 }
 
-/* Native dropdowns: force the option popup dark (the OS default is a white
-   list, which was invisible against light text). color-scheme + explicit
-   option colors covers Chrome/Edge/Firefox on Windows. */
-select {
-  color-scheme: dark;
-}
-select option,
-select optgroup {
-  background-color: #0d1122;
-  color: #ecebff;
-}
 /* Date inputs: dark calendar/spinner + a lighter picker icon. */
 input[type='date'] {
   color-scheme: dark;

@@ -50,7 +50,6 @@ export interface Store {
   addResume: (name: string, url?: string) => void
   updateResume: (id: string, patch: Partial<Resume>) => void
   deleteResume: (id: string) => void
-  resumeName: (id: string | null) => string
   // sync
   dirty: boolean
   lastSyncedAt: string | null
@@ -192,11 +191,6 @@ export function useStore(): Store {
     [mutate],
   )
 
-  const resumeName = useCallback(
-    (id: string | null) => (id ? data.resumes.find((r) => r.id === id)?.name || '—' : '—'),
-    [data.resumes],
-  )
-
   const syncNow = useCallback(() => {
     if (!hasToken()) return
     const now = new Date().toISOString()
@@ -232,7 +226,6 @@ export function useStore(): Store {
     addResume,
     updateResume,
     deleteResume,
-    resumeName,
     dirty,
     lastSyncedAt,
     syncState,
