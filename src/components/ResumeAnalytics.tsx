@@ -12,14 +12,14 @@ export default function ResumeAnalytics({ store }: { store: Store }) {
     <Card className="p-5">
       <SectionTitle icon="📊" title="Resume analytics" />
       {!hasData ? (
-        <p className="font-sans text-[13.5px] leading-relaxed text-muted">
+        <p className="font-sans text-[15px] leading-relaxed text-muted">
           Once you log applications and tag which resume you used, this shows which version pulls the best response rate.
         </p>
       ) : (
         <div className="overflow-x-auto">
           <table className="w-full min-w-[520px] border-collapse text-left">
             <thead>
-              <tr className="font-mono text-[11.5px] uppercase tracking-wide text-faint">
+              <tr className="font-mono text-[12.5px] uppercase tracking-wide text-faint">
                 <th className="pb-2 pr-3 font-medium">Resume</th>
                 <th className="pb-2 px-3 font-medium">Applied</th>
                 <th className="pb-2 px-3 font-medium">Responded</th>
@@ -32,17 +32,17 @@ export default function ResumeAnalytics({ store }: { store: Store }) {
               {rows.map((r, i) => (
                 <tr key={r.resume.id} className="border-t border-white/8">
                   <td className="py-2.5 pr-3">
-                    <span className="font-sans text-[14px] font-semibold text-ink">{r.resume.name}</span>
+                    <span className="font-sans text-[15px] font-semibold text-ink">{r.resume.name}</span>
                     {i === 0 && r.applied > 0 && (
                       <span className="ml-2 rounded-full border border-accent-emerald/40 bg-accent-emerald/10 px-2 py-0.5 font-mono text-[10.5px] font-bold text-accent-emerald">
                         best
                       </span>
                     )}
                   </td>
-                  <td className="px-3 font-mono text-[14px] text-subtle">{r.applied}</td>
-                  <td className="px-3 font-mono text-[14px] text-subtle">{r.responded}</td>
-                  <td className="px-3 font-mono text-[14px] text-subtle">{r.interviewed}</td>
-                  <td className="px-3 font-mono text-[14px] text-subtle">{r.offers}</td>
+                  <td className="px-3 font-mono text-[15px] text-subtle">{r.applied}</td>
+                  <td className="px-3 font-mono text-[15px] text-subtle">{r.responded}</td>
+                  <td className="px-3 font-mono text-[15px] text-subtle">{r.interviewed}</td>
+                  <td className="px-3 font-mono text-[15px] text-subtle">{r.offers}</td>
                   <td className="min-w-[140px] py-2.5 pl-3">
                     <div className="flex items-center gap-2">
                       <span className="w-9 font-mono text-[13px] font-bold text-accent-mint">{r.responseRate}%</span>

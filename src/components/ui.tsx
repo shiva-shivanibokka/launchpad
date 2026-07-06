@@ -13,8 +13,8 @@ export function Card({ children, className = '' }: { children: ReactNode; classN
 export function SectionTitle({ icon, title, right }: { icon: string; title: string; right?: ReactNode }) {
   return (
     <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-      <h2 className="flex items-center gap-2.5 font-display text-[21px] font-extrabold uppercase tracking-tight text-ink">
-        <span className="text-[22px]">{icon}</span>
+      <h2 className="flex items-center gap-2.5 font-display text-[25px] font-extrabold uppercase tracking-tight text-ink">
+        <span className="text-[26px]">{icon}</span>
         {title}
       </h2>
       {right}
@@ -37,7 +37,7 @@ export function ProgressBar({ value, total, color = '#a78bfa' }: { value: number
 export function Pill({ children, color = '#a78bfa' }: { children: ReactNode; color?: string }) {
   return (
     <span
-      className="inline-flex items-center gap-1 rounded-full border px-2.5 py-1 font-mono text-[13px] font-bold"
+      className="inline-flex items-center gap-1 rounded-full border px-2.5 py-1 font-mono text-[14px] font-bold"
       style={{ color, borderColor: `${color}55`, background: `${color}14` }}
     >
       {children}
@@ -53,14 +53,14 @@ export function Dot({ color }: { color: string }) {
 export function Field({ label, children }: { label: string; children: ReactNode }) {
   return (
     <label className="block">
-      <span className="mb-1 block font-mono text-[12px] uppercase tracking-wide text-muted">{label}</span>
+      <span className="mb-1 block font-mono text-[13px] uppercase tracking-wide text-muted">{label}</span>
       {children}
     </label>
   )
 }
 
 const inputCls =
-  'w-full rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1.5 font-sans text-[14px] text-ink outline-none transition focus:border-accent-violet/60'
+  'w-full rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2 font-sans text-[15px] text-ink outline-none transition focus:border-accent-violet/60'
 
 export function TextInput(props: React.InputHTMLAttributes<HTMLInputElement>) {
   return <input {...props} className={`${inputCls} ${props.className || ''}`} />
@@ -86,7 +86,7 @@ export function Button({
   return (
     <button
       {...rest}
-      className={`whitespace-nowrap rounded-lg border px-3 py-1.5 font-mono text-[13px] font-bold transition disabled:opacity-50 ${styles} ${rest.className || ''}`}
+      className={`whitespace-nowrap rounded-lg border px-3.5 py-2 font-mono text-[14px] font-bold transition disabled:opacity-50 ${styles} ${rest.className || ''}`}
     >
       {children}
     </button>

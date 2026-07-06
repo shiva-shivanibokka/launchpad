@@ -61,11 +61,11 @@ export default function Board({
               }`}
             >
               <Dot color={col.color} />
-              <span className="rounded-full bg-white/5 px-2 py-0.5 font-mono text-[12px]" style={{ color: col.color }}>
+              <span className="rounded-full bg-white/5 px-2 py-0.5 font-mono text-[13px]" style={{ color: col.color }}>
                 {items.length}
               </span>
               <span
-                className="mt-1 font-mono text-[12.5px] font-bold uppercase tracking-wide [writing-mode:vertical-rl]"
+                className="mt-1 font-mono text-[14px] font-bold uppercase tracking-wide [writing-mode:vertical-rl]"
                 style={{ color: col.color }}
               >
                 {col.label}
@@ -78,21 +78,21 @@ export default function Board({
           <div
             key={col.id}
             {...dropProps(col.id)}
-            className={`flex w-[268px] shrink-0 flex-col rounded-2xl border bg-card/40 p-2.5 backdrop-blur-md transition ${
+            className={`flex w-[300px] shrink-0 flex-col rounded-2xl border bg-card/40 p-3 backdrop-blur-md transition ${
               over === col.id ? 'border-accent-violet/60 bg-accent-violet/5' : 'border-white/10'
             }`}
           >
             <div className="mb-2.5 flex items-center justify-between px-1">
-              <span className="flex items-center gap-2 font-mono text-[13px] font-bold uppercase tracking-wide" style={{ color: col.color }}>
+              <span className="flex items-center gap-2 font-mono text-[14.5px] font-bold uppercase tracking-wide" style={{ color: col.color }}>
                 <Dot color={col.color} />
                 {col.label}
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="rounded-full bg-white/5 px-2 py-0.5 font-mono text-[12px] text-faint">{items.length}</span>
+                <span className="rounded-full bg-white/5 px-2 py-0.5 font-mono text-[13px] text-faint">{items.length}</span>
                 <button
                   onClick={() => toggle(col.id)}
                   title={`Collapse ${col.label}`}
-                  className="rounded-md border border-white/10 px-1.5 font-mono text-[13px] text-faint hover:text-ink"
+                  className="rounded-md border border-white/10 px-2 font-mono text-[14px] text-faint hover:text-ink"
                 >
                   –
                 </button>
@@ -103,7 +103,7 @@ export default function Board({
                 <AppCard key={a.id} app={a} store={store} onEdit={onEdit} />
               ))}
               {items.length === 0 && (
-                <div className="rounded-xl border border-dashed border-white/10 px-2 py-4 text-center font-mono text-[12px] text-faint">
+                <div className="rounded-xl border border-dashed border-white/10 px-2 py-5 text-center font-mono text-[13px] text-faint">
                   drop here
                 </div>
               )}

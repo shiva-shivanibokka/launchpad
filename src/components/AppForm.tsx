@@ -57,11 +57,11 @@ export default function AppForm({
   return (
     <div className="fixed inset-0 z-40 grid place-items-center bg-black/60 p-4 backdrop-blur-sm" onClick={onClose}>
       <div
-        className="max-h-[88vh] w-full max-w-lg overflow-y-auto rounded-2xl border border-white/12 bg-card/95 p-5 shadow-card backdrop-blur-xl"
+        className="max-h-[88vh] w-full max-w-xl overflow-y-auto rounded-2xl border border-white/12 bg-card/95 p-6 shadow-card backdrop-blur-xl"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mb-4 flex items-center justify-between">
-          <h3 className="font-display text-[20px] font-extrabold uppercase tracking-tight text-ink">
+          <h3 className="font-display text-[22px] font-extrabold uppercase tracking-tight text-ink">
             {editing ? 'Edit application' : 'Add application'}
           </h3>
           <button onClick={onClose} className="rounded-md px-2 py-1 font-mono text-muted hover:text-ink">

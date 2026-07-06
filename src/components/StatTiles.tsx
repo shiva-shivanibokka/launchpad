@@ -14,12 +14,12 @@ export default function StatTiles({ t }: { t: Totals }) {
   return (
     <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
       {tiles.map((m) => (
-        <Card key={m.label} className="p-4">
-          <div className="font-mono text-[13px] uppercase tracking-wide text-muted">{m.label}</div>
-          <div className="mt-1.5 font-display text-[30px] font-extrabold leading-none" style={{ color: m.color }}>
+        <Card key={m.label} className="p-5">
+          <div className="font-mono text-[15px] uppercase tracking-wide text-muted">{m.label}</div>
+          <div className="mt-2 font-display text-[42px] font-extrabold leading-none" style={{ color: m.color }}>
             {m.value}
           </div>
-          <div className="mt-1 font-mono text-[13px] text-faint">{m.sub}</div>
+          <div className="mt-1.5 font-mono text-[14px] text-faint">{m.sub}</div>
         </Card>
       ))}
     </div>
